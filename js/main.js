@@ -1,5 +1,5 @@
-let apps = ["about", "settings"];
-let appNames = ["About", "Settings"];
+let apps = ["about", "settings", "video"];
+let appNames = ["About", "Settings", "Video Player"];
 let mouseDown = false;
 addEventListener("mousedown", (event) => {
 	mouseDown = true;
@@ -21,7 +21,7 @@ function openApp(appPath){
 	.then((response) => response.json())
 	.then((manifestJson) => {
 		appFrame.style.width = manifestJson.width + "px";
-		appFrame.style.height = manifestJson.height + "px";
+		appFrame.style.height = manifestJson.height + 32 + "px";
 		appFrame.style.position = "absolute";
 		appFrame.id = manifestJson.windowId;
 		appFrame.style.backgroundColor = "white";
