@@ -39,7 +39,6 @@ function openApp(appPath){
 				appFrame.style.top = event.y - 16 + "px";
 				appFrame.style.left = event.x - titlebar.clientWidth / 2 + "px";
 			}
-			console.log("mouse moved!", mouseDown)
 		});
 		appFrame.appendChild(titlebar);
 		let appContent = document.createElement("div");
