@@ -48,7 +48,7 @@ function openApp(appPath){
 		appFrame.appendChild(appContent);
 		let closeButton = document.createElement("img");
 		closeButton.className = "closeButton";
-		closeButton.src = "/img/close.png";
+		closeButton.src = "img/close.png";
 		closeButton.addEventListener("click", () => {
 			appFrame.remove();
 		});
