@@ -19,11 +19,12 @@ function openApp(app){
 		titlebar.style.backgroundColor = "lightblue";
 		titlebar.style.width = "100%";
 		titlebar.style.height = "32px";
-		titlebar.addEventListener("mousemove", (event) => {
-			if(mouseDown){
-				appWindow.style.top = event.y - 16 + "px";
-				appWindow.style.left = event.x - titlebar.clientWidth / 2 + "px";
-			}
+		titlebar.style.alignContent = "center";
+		titlebar.style.userSelect = "none";
+		titlebar.className = "titlebar";
+		titlebar.addEventListener("mousedown", () => {
+			createOverlay();
+			lastWindow = appWindow;
 		});
 		appWindow.appendChild(titlebar);
 
@@ -46,6 +47,13 @@ function openApp(app){
 			appWindow.remove();
 		});
 		appWindow.appendChild(closeButton);
-		
+
+		titlebar.innerHTML = appContent.title;
 	});
+}
+
+function updateAppWindow(){
+	const appFrame = window.frameElement;
+	const titlebar = appFrame.parentElement.querySelector("div");
+	titlebar.innerHTML = document.title;
 }
