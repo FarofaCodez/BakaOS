@@ -42,7 +42,10 @@ function openApp(app){
 		appContent = appFrame.contentDocument;
 		let apiScript = document.createElement("script");
 		apiScript.src = "../../js/api.js";
+		let initScript = document.createElement("script");
+		initScript.src = "../../js/init.js";
 		appContent.head.appendChild(apiScript);
+		appContent.head.appendChild(initScript);
 	});
 
 	// closeButton
@@ -53,14 +56,4 @@ function openApp(app){
 		appWindow.remove();
 	});
 	appWindow.appendChild(closeButton);
-}
-
-function updateAppWindow(){
-	const appFrame = window.frameElement;
-	const titlebar = appFrame.parentElement.querySelector("div");
-	titlebar.innerHTML = document.title;
-}
-
-if(location.pathname != "/"){
-	updateAppWindow();
 }
