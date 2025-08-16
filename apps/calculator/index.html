@@ -8,26 +8,43 @@
 	<link rel="stylesheet" href="calculator.css">
 </head>
 <body>
-	<div id="display"></div>
-	<div id="buttons" >
-		<button id="button1" >1</button>
-		<button id="button2" >2</button>
-		<button id="button3" >3</button>
-		<br>
-		<button id="button4" >4</button>
-		<button id="button5" >5</button>
-		<button id="button6" >6</button>
-		<br>
-		<button id="button7" >7</button>
-		<button id="button8" >8</button>
-		<button id="button9" >9</button>
-		<br>
-		<button id="button0" >0</button>
-		<button id="nextStep" >N</button>
-		<br>
-		<button id="buttonClear" >C</button>
-		<button id="buttonBackspace" >⌫</button>
-		<button id="buttonEquals" >=</button>
+	<div id="calculator" >
+		<div id="display">
+			<div id="operation" ></div>
+			<div id="number" ></div>
+		</div>
+		<div id="buttons" >
+			<div id="row1" class="row" >
+				<button id="button1" >1</button>
+				<button id="button2" >2</button>
+				<button id="button3" >3</button>
+			</div>
+			<div id="row2" class="row" >
+				<button id="button4" >4</button>
+				<button id="button5" >5</button>
+				<button id="button6" >6</button>
+			</div>
+			<div id="row3" class="row" >
+				<button id="button7" >7</button>
+				<button id="button8" >8</button>
+				<button id="button9" >9</button>
+			</div>
+			<div id="row4" class="row" >
+				<button id="plusButton" >+</button>
+				<button id="button0" >0</button>
+				<button id="minusButton" >-</button>
+			</div>
+			<div id="row5" class="row" >
+				<button id="multiplyButton" >*</button>
+				<button id="divideButton" >/</button>
+				<button id="dotButton" >.</button>
+			</div>
+			<div id="endRow" class="row" >
+				<button id="buttonClear" >C</button>
+				<button id="buttonBackspace" >⌫</button>
+				<button id="buttonEquals" >=</button>
+			</div>
+		</div>
 	</div>
 	<script src="calculator.js" ></script>
 </body>

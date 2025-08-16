@@ -7,6 +7,8 @@ startButton.addEventListener("mouseup", (event) => {
 		startMenu.style.visibility = "visible";
 		startMenu.innerHTML = "";
 		for (let app in loadedApps) {
+			let appData = loadedApps[app];
+
 			let startLink = document.createElement("a");
 			let startItem = document.createElement("img");
 			startItem.src = `apps/${app}/icon.svg`;
@@ -14,10 +16,11 @@ startButton.addEventListener("mouseup", (event) => {
 			startItem.className = "startItem";
 			startItem.width = 64;
 			startItem.height = 64;
-			startItem.title = app.title;
-			startLink.appendChild(startItem);
-			startLink.href = `javascript:openApp("${app}")`;
-			startMenu.appendChild(startLink);
+			startItem.title = appData.title;
+			startItem.addEventListener("click", () => {
+				openApp(app);
+			})
+			startMenu.appendChild(startItem);
 		}
 	}
 	if(startOpen == false){

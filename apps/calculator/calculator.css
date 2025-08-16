@@ -1,10 +1,58 @@
 button {
-	border-style: none;
-	width: 50px;
-	height: 50px;
 	font-family: monospace;
+	width: 100%;
+	height: auto;
 }
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+#calculator {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
 #display {
-	height: 40px;
-	width: 150px;
+	flex: 0 0 15%;
+	font-size: 2rem;
+	display: flex;
+	align-items: center;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+
+#operation {
+	justify-content: left;
+}
+
+#number {
+	justify-content: right;
+}
+
+#buttons {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+.row {
+	display: flex;
+	flex: 1;
+	width: 100vw;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.row button {
+	flex: 1;
+	height: 100%;
+	font-size: 1.2rem;
+	border: none;
+	margin: 0;
+	cursor: pointer;
 }
