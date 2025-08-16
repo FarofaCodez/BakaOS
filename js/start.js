@@ -6,18 +6,17 @@ startButton.addEventListener("mouseup", (event) => {
 	if(startOpen == true){
 		startMenu.style.visibility = "visible";
 		startMenu.innerHTML = "";
-		for (let i = 0; i < apps.length; i++) {
-			const element = apps[i];
+		for (let app in loadedApps) {
 			let startLink = document.createElement("a");
 			let startItem = document.createElement("img");
-			startItem.src = `apps/${element}/icon.svg`;
-			startItem.id = `${element}StartItem`;
+			startItem.src = `apps/${app}/icon.svg`;
+			startItem.id = `${app}StartItem`;
 			startItem.className = "startItem";
 			startItem.width = 64;
 			startItem.height = 64;
-			startItem.title = appNames[i];
+			startItem.title = app.title;
 			startLink.appendChild(startItem);
-			startLink.href = `javascript:openApp("${element}")`;
+			startLink.href = `javascript:openApp("${app}")`;
 			startMenu.appendChild(startLink);
 		}
 	}

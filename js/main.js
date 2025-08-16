@@ -1,15 +1,33 @@
-let apps = ["about", "settings", "video", "calculator"];
-let appNames = [];
+let installedApps = ["about", "settings", "video", "calculator"];
+let loadedApps = {};
+const defaultResponse = {
+	title: "Unknown app",
+	width: 800,
+	height: 600
+};
 
-for (let index = 0; index < apps.length; index++) {
-	const app = apps[index];
-	const appPath = `apps/${app}`;
-	fetch(`${appPath}/manifest.json`)
-	.then((response) => response.json())
-	.then((appManifest) => {
-		appNames[index] = appManifest.title;
-	});
+async function loadApps() {
+	for (let index = 0; index < installedApps.length; index++) {
+		const app = installedApps[index];
+		const appPath = `apps/${app}`;
+		try {
+			const response = await fetch(`${appPath}/manifest.json`);
+			let appManifest = {};
+			if(response.ok){
+				appManifest = await response.json();
+			} else {
+				continue;
+			}
+
+			loadedApps[app] = appManifest;
+		} catch (error) {
+			console.error("Fetch error:", error);
+		}
+	}
 }
+
+loadApps();
+
 const appsDiv = document.getElementById("apps");
 let overlay = null;
 function createOverlay(){
@@ -21,7 +39,7 @@ function createOverlay(){
 	overlay.style.height = "100%";
 	overlay.style.cursor = "move";
 	overlay.style.zIndex = 999999;
-	overlay.style.background = "rgba(0, 0, 0, 0.01)";
+	overlay.style.background = "rgba(0, 0, 0, 0)";
 	document.body.appendChild(overlay);
 }
 let lastWindow = null;
