@@ -10,14 +10,14 @@ startButton.addEventListener("mouseup", (event) => {
 			const element = apps[i];
 			let startLink = document.createElement("a");
 			let startItem = document.createElement("img");
-			startItem.src = `img/apps/${element}.png`;
+			startItem.src = `apps/${element}/icon.svg`;
 			startItem.id = `${element}StartItem`;
 			startItem.className = "startItem";
 			startItem.width = 64;
 			startItem.height = 64;
 			startItem.title = appNames[i];
 			startLink.appendChild(startItem);
-			startLink.href = `javascript:openApp("apps/${element}")`;
+			startLink.href = `javascript:openApp("${element}")`;
 			startMenu.appendChild(startLink);
 		}
 	}
