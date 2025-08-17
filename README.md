@@ -1,5 +1,9 @@
 # BakaOS
 
-A little operating system for your browser
+A little window manager for your browser
 
-[See it on GitHub Pages!](https://farofacodez.github.io/BakaOS/)
+All that is needed is a static web server
+
+Extract the repo into a directory, go to it and type:
+
+`python -m http.server 8080`
