@@ -6,4 +6,12 @@ html, body {
 button {
 	min-width: 100px;
 	height: auto;
+	min-height: 40px;
+	font-size: 1.2rem;
+	border: none;
+	margin: 0;
+	cursor: pointer;
+}
+input {
+	border-style: none;
 }

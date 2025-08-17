@@ -7,18 +7,10 @@
 	<link rel="stylesheet" href="../../css/default.css">
 </head>
 <body>
-	<button onclick='openVideo()' id="openVideoButton" >Open Video</button>
-	<script>
-		function openVideo(){
-			let video = prompt("Video URL");
-			let videoPlayer = document.createElement("video")
-			videoPlayer.src = video;
-			videoPlayer.controls = true;
-			videoPlayer.style.width = "100%";
-			videoPlayer.style.height = "100%";
-			document.body.appendChild(videoPlayer);
-			document.getElementById("openVideoButton").remove();
-		}
-	</script>
+	<form>
+		<input type="file" id="fileUpload" >
+	</form>
+	<div id="player" ></div>
+	<script src="video.js" ></script>
 </body>
 </html>
