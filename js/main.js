@@ -1,10 +1,5 @@
 let installedApps = ["about", "settings", "video", "calculator"];
 let loadedApps = {};
-const defaultResponse = {
-	title: "Unknown app",
-	width: 800,
-	height: 600
-};
 
 async function loadApps() {
 	for (let index = 0; index < installedApps.length; index++) {
@@ -26,7 +21,14 @@ async function loadApps() {
 	}
 }
 
+function loadSettings(){
+	let bgColor = localStorage.getItem("backgroundColor");
+	document.body.style.backgroundColor = bgColor;
+}
+
 loadApps();
+loadSettings();
+
 
 const appsDiv = document.getElementById("apps");
 let overlay = null;

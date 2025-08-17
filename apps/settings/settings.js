@@ -12,5 +12,6 @@ const bgColor = window.getComputedStyle(body).backgroundColor;
 document.getElementById("colorInput").value = rgbToHex(bgColor);
 
 function saveSettings(){
+	localStorage.setItem("backgroundColor", document.getElementById("colorInput").value);
 	body.style.backgroundColor = document.getElementById("colorInput").value;
 }
