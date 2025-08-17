@@ -11,22 +11,29 @@ function openApp(app){
 	appWindow.style.height = appManifest.height + 32 + "px";
 	appWindow.style.position = "absolute";
 	appWindow.id = appManifest.windowId;
-	appWindow.style.backgroundColor = "white";
 	appsDiv.appendChild(appWindow);
 
 	// titlebar
 	let titlebar = document.createElement("div");
-	titlebar.style.backgroundColor = "lightblue";
+	titlebar.style.backgroundColor = "#eff0f1";
 	titlebar.style.width = "100%";
 	titlebar.style.height = "32px";
-	titlebar.style.alignContent = "center";
 	titlebar.style.userSelect = "none";
+	titlebar.style.alignContent = "center";
+	titlebar.style.borderTopLeftRadius = "10px";
+	titlebar.style.borderTopRightRadius = "10px";
 	titlebar.className = "titlebar";
 	titlebar.addEventListener("mousedown", () => {
 		createOverlay();
 		lastWindow = appWindow;
 	});
 	appWindow.appendChild(titlebar);
+
+	// windowTitle
+	let windowTitle = document.createElement("div");
+	windowTitle.style.textAlign = "center";
+	windowTitle.className = "windowTitle";
+	titlebar.appendChild(windowTitle);
 
 	// appFrame
 	let appFrame = document.createElement("iframe");
@@ -35,6 +42,7 @@ function openApp(app){
 	appFrame.style.border = "none"
 	appFrame.style.width = "100%";
 	appFrame.style.height = "100%";
+	appFrame.style.backgroundColor = "white";
 	appWindow.appendChild(appFrame);
 	let appContent = null;
 
@@ -51,7 +59,7 @@ function openApp(app){
 	// closeButton
 	let closeButton = document.createElement("img");
 	closeButton.className = "closeButton";
-	closeButton.src = "img/close.png";
+	closeButton.src = "img/close.svg";
 	closeButton.addEventListener("click", () => {
 		appWindow.remove();
 	});

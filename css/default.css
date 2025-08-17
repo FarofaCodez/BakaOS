@@ -1,4 +1,9 @@
-body {
+html, body {
 	font-family: sans-serif;
-	margin: 0;
+	margin: 8px;
+	padding: 0;
+}
+button {
+	min-width: 100px;
+	height: auto;
 }
