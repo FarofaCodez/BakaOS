@@ -22,8 +22,8 @@ async function loadApps() {
 }
 
 function loadSettings(){
-	let bgColor = localStorage.getItem("backgroundColor");
-	document.body.style.backgroundColor = bgColor;
+	let bgImage = localStorage.getItem("backgroundImage");
+	document.body.style.backgroundImage = `url("${bgImage}")`;
 }
 
 loadApps();
