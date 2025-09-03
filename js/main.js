@@ -1,4 +1,4 @@
-let installedApps = ["about", "settings", "video", "calculator"];
+let installedApps = ["about", "settings", "video", "calculator", "files"];
 let loadedApps = {};
 
 async function loadApps() {
@@ -58,3 +58,8 @@ document.addEventListener("mousemove", (event) => {
 		lastWindow.style.left = event.x - lastWindow.querySelector(".titlebar").clientWidth / 2 + "px";
 	}
 });
+
+function loadApp(app){
+	installedApps = [app];
+	loadApps();
+}

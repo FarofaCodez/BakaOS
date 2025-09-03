@@ -15,6 +15,9 @@ function listFiles(directory){
 		if(element.type === "file"){
 			elementType = "file";
 			elementEntry.src = "file.svg";
+			elementEntry.onclick = () => {
+				window.open(element.content);
+			};
 		} else {
 			elementEntry.src = "folder.svg";
 			elementEntry.onclick = () => {
@@ -58,6 +61,7 @@ function listFiles(directory){
 		container.appendChild(elementEntry);
 	}
 	document.getElementById("itemHovered").innerHTML = currentDirectory.name;
+	webfs.save();
 }
 listFiles(currentDirectory);
 function newFolder(){
@@ -70,7 +74,7 @@ function newFolder(){
 }
 function upDirectory(){
 	console.log(currentDirectory, root);
-	if(currentDirectory != root){
+	if(currentDirectory.type != "root"){
 		currentDirectory = currentDirectory.parent;
 		listFiles(currentDirectory);
 	}

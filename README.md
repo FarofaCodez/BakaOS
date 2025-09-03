@@ -13,3 +13,5 @@ Extract the repo into a directory, go to it and type:
 ## Credits
 
 Icons from the elementary and Adwaita icon packs
+
+Uses the [Flatted](https://www.npmjs.com/package/flatted) library to handle circular references
