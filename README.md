@@ -12,4 +12,4 @@ Extract the repo into a directory, go to it and type:
 
 ## Credits
 
-Icons from the elementary icon pack
+Icons from the elementary and Adwaita icon packs
