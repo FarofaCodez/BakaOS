@@ -1,0 +1,8 @@
+#itemHovered {
+	position: absolute;
+	bottom: 0px;
+	font-size: 15pt;
+}
+body {
+	background-color: #808080;
+}

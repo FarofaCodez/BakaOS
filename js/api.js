@@ -65,6 +65,3 @@ function openApp(app){
 	});
 	appWindow.appendChild(closeButton);
 }
-
-function uploadFile(){
-}
