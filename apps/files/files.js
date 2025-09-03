@@ -37,6 +37,7 @@ function listFiles(directory){
 				currentDirectory.children = currentDirectory.children.filter(x => x !== element);
 				elementEntry.remove();
 				newMenu.remove();
+				webfs.save();
 			};
 			deleteButton.innerHTML = "Delete";
 			let cancelButton = document.createElement("button");
