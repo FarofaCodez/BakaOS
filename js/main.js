@@ -1,5 +1,6 @@
 let installedApps = ["about", "settings", "video", "calculator", "files"];
 let loadedApps = {};
+let loadedAppsCount = 0;
 
 async function loadApps() {
 	for (let index = 0; index < installedApps.length; index++) {
@@ -15,10 +16,12 @@ async function loadApps() {
 			}
 
 			loadedApps[app] = appManifest;
+			loadedAppsCount += 1;
 		} catch (error) {
 			console.error("Fetch error:", error);
 		}
 	}
+	console.log(`${installedApps.length} apps installed, ${loadedAppsCount} apps loaded`);
 }
 
 function loadSettings(){
